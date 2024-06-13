@@ -17,11 +17,13 @@ func NewIndexApiController() *IndexApiController {
 }
 
 func (r *IndexApiController) Index(ctx http.Context) http.Response {
-	return ctx.Response().Success().Json(http.Json{
+	data := map[string]interface{}{
 		"name":    facades.Config().GetString("app.name", ""),
 		"version": facades.Config().GetString("app.version", ""),
 		"support": map[string]any{
 			"version": support.Version,
 		},
-	})
+	}
+	return ctx.Response().Success().Json(data)
+	//return ctx.Response().Success().Json(result.Success().SetData(data))
 }
