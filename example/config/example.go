@@ -2,7 +2,6 @@ package config
 
 import (
 	"github.com/goravel/framework/facades"
-
 	"github.com/hongyukeji/goravel-modules/example/constants"
 )
 
