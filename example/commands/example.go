@@ -6,6 +6,7 @@ import (
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
 	"github.com/goravel/framework/contracts/foundation"
+	"github.com/hongyukeji/goravel-modules/example/providers"
 )
 
 type Example struct{}
@@ -35,9 +36,9 @@ func (receiver *Example) Handle(ctx console.Context) error {
 
 	var app foundation.Application
 
-	app.Publishes("github.com/hongyukeji/goravel-modules", map[string]string{
-		"example/resources/views": app.BasePath("resources/views"),
-	}, "example-views")
+	// TODO: 开发中
+
+	providers.Publishes(app)
 
 	return nil
 }
