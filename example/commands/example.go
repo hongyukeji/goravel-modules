@@ -5,6 +5,7 @@ import (
 
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
+	"github.com/goravel/framework/contracts/foundation"
 )
 
 type Example struct{}
@@ -31,6 +32,12 @@ func (receiver *Example) Extend() command.Extend {
 // Handle Execute the console command.
 func (receiver *Example) Handle(ctx console.Context) error {
 	fmt.Println("Run Example command")
+
+	var app foundation.Application
+
+	app.Publishes("github.com/hongyukeji/goravel-modules", map[string]string{
+		"example/resources/views": app.BasePath("resources/views"),
+	}, "example-views")
 
 	return nil
 }
