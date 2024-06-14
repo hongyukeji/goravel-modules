@@ -16,6 +16,7 @@ func (receiver *AppServiceProvider) Register(app foundation.Application) {
 	(&EventServiceProvider{}).Register(app)
 	(&ValidationServiceProvider{}).Register(app)
 	(&ViewServiceProvider{}).Register(app)
+	(&CommandServiceProvider{}).Register(app)
 }
 
 func (receiver *AppServiceProvider) Boot(app foundation.Application) {
@@ -27,4 +28,5 @@ func (receiver *AppServiceProvider) Boot(app foundation.Application) {
 	(&EventServiceProvider{}).Boot(app)
 	(&ValidationServiceProvider{}).Boot(app)
 	(&ViewServiceProvider{}).Boot(app)
+	(&CommandServiceProvider{}).Boot(app)
 }
