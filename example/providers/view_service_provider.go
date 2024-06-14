@@ -11,7 +11,7 @@ type ViewServiceProvider struct {
 }
 
 func (receiver *ViewServiceProvider) Register(app foundation.Application) {
-	// 设置视图模板
+	// 配置视图模板
 	facades.Config().Add(
 		"http.drivers.gin.template",
 		func() (render.HTMLRender, error) {
