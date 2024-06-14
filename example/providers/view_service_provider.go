@@ -23,4 +23,8 @@ func (receiver *ViewServiceProvider) Register(app foundation.Application) {
 func (receiver *ViewServiceProvider) Boot(app foundation.Application) {
 	// Add HTTP middleware
 	//facades.Route().GlobalMiddleware(middleware.ViewFunc())
+
+	app.Publishes("github.com/hongyukeji/goravel-modules", map[string]string{
+		"example/resources/views": app.BasePath("resources/views"),
+	}, "example-views")
 }
