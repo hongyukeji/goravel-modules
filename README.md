@@ -2,7 +2,7 @@
 
 > An Modules For A Goravel Extend Package
 
-> 将public目录下的文件挂载至应用根路径
+> 模块化开发中
 
 ## Directory Structure
 
